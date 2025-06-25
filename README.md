@@ -1,73 +1,166 @@
-# Welcome to your Lovable project
+Here’s a professional and comprehensive `README.md` for your **StreamSphere** OTT Video Platform, built on the **MERN stack**:
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/637fbce0-80a3-40f7-a3de-6136b66ab77a
+```markdown
+# 🎬 StreamSphere – OTT Video Platform
 
-## How can I edit this code?
+StreamSphere is a full-stack Netflix-style OTT video streaming web application built using the MERN stack. It allows users to browse and watch videos, manage watchlists and history, while providing admins with full control over video content, user plans, and analytics.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🌐 Live Demo
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/637fbce0-80a3-40f7-a3de-6136b66ab77a) and start prompting.
+🔗 [Coming Soon]  
+🔐 Admin credentials and deployment URLs will be updated post-deployment.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend:** React.js, JSX, CSS (modular files), Tailwind (optional), Web Speech API
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas
+- **Authentication:** JWT (Role-based)
+- **Video Upload:** Multer + GridFS / Cloudinary / AWS S3
+- **Deployment:** Vercel (Frontend) | Render / Railway (Backend)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📦 Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 👤 User Side
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- 🔐 Secure Login/Signup with JWT
+- 🔎 Search Bar with Voice Recognition
+- 🎞️ Infinite carousel scrolls for:
+  - Genres
+  - Languages
+  - Top Air
+  - Latest Releases
+  - Anime
+  - For Kids
+  - Studios
+- 📜 Watchlist & History Tracking
+- 📱 Responsive UI for Mobile and Desktop
+- 💳 Account Management:
+  - View/Edit Plan
+  - See Payment Due Dates
+  - Update Personal Info
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🛠️ Admin Side
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+- 🔐 Admin-only Dashboard
+- 📤 Upload/Modify/Delete Video Cards
+- 🗂️ Categorize Content (Genre, Language, Tags)
+- ⭐ Add to Top Air, Anime, Kids, etc.
+- 👥 User Management:
+  - Create/Edit/Delete Users
+  - View Subscription Plans & Payment Status
+- 📈 Future scope: Analytics Dashboard
+
+---
+
+## 💰 Subscription Plans
+
+| Plan        | Price      | Features                          |
+|-------------|------------|-----------------------------------|
+| Basic       | ₹99/month  | 1 screen, SD, no downloads        |
+| Standard    | ₹249/month | 2 screens, HD, 5 downloads        |
+| Premium     | ₹399/month | 4 screens, Full HD/4K, unlimited  |
+| Student     | ₹59/month  | 1 screen, 720p, 2 downloads       |
+| Annual Plan | ₹999/year  | Standard Plan with 2 months free  |
+
+_Add-ons: Kids Mode ₹29/month | Anime Pass ₹49/month_
+
+---
+
+## 📁 Project Structure (MERN)
+
 ```
 
-**Edit a file directly in GitHub**
+StreamSphere/
+├── client/                # React Frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   └── index.js
+├── server/                # Express Backend
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middlewares/
+│   └── server.js
+├── .env
+├── package.json
+└── README.md
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+````
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Getting Started
 
-## What technologies are used for this project?
+### Prerequisites
 
-This project is built with:
+- Node.js
+- MongoDB Atlas Account
+- Git
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Install & Run Locally
 
-## How can I deploy this project?
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your-username/streamsphere.git
+   cd streamsphere
+````
 
-Simply open [Lovable](https://lovable.dev/projects/637fbce0-80a3-40f7-a3de-6136b66ab77a) and click on Share -> Publish.
+2. Setup client:
 
-## Can I connect a custom domain to my Lovable project?
+   ```bash
+   cd client
+   npm install
+   npm start
+   ```
 
-Yes, you can!
+3. Setup server:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+   ```bash
+   cd server
+   npm install
+   npm run dev
+   ```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+4. Create `.env` files in both `client/` and `server/` for sensitive config like JWT\_SECRET, DB\_URI, etc.
+
+---
+
+## 🧪 Features in Development
+
+* Payment Gateway Integration (Razorpay/Stripe)
+* AI-based Recommendations
+* Real-time User Analytics
+* Admin Notifications
+
+---
+
+## 📜 License
+
+MIT License. Free to use, modify, and distribute with credits.
+
+---
+
+## 👨‍💻 Developed By
+
+**Rayi Gireesh Kumar**
+B.Tech (AI & ML) 2025
+ISTE Student Coordinator | AI/ML Developer | MERN Stack Engineer
+
+```
+
+---
+
+Would you like this `README.md` file exported as a downloadable file or directly added to your project folder structure now?
+```
