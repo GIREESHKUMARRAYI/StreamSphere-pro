@@ -1,0 +1,79 @@
+/* HorizontalCardRow.css - Extracted styles from HorizontalCardRow.jsx */
+
+.hcr-root {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.hcr-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .hcr-title {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.hcr-inner {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+}
+.hcr-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.hcr-root:hover .hcr-arrow {
+  opacity: 1;
+}
+.hcr-arrow-left {
+  left: 0.5rem;
+}
+.hcr-arrow-right {
+  right: 0.5rem;
+}
+.hcr-arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+.hcr-arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.hcr-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  width: 100vw;
+  max-width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hcr-scroll::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hcr-scroll {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+} 

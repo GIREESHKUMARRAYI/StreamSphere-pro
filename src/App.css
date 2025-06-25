@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+/* App.css - Extracted styles from App.jsx */
+
+.app-loading-root {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-loading-text {
+  color: #fff;
+  font-size: 1.25rem;
+}

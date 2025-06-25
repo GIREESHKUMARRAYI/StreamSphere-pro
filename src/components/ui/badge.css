@@ -1,0 +1,38 @@
+/* badge.css - Extracted styles from badge.jsx */
+
+.badge-base {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: color 0.2s, background 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+.badge-variant-default {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.badge-variant-default:hover {
+  background: var(--primary-hover, #2563eb);
+}
+.badge-variant-secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.badge-variant-secondary:hover {
+  background: var(--secondary-hover, #6b7280);
+}
+.badge-variant-destructive {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+.badge-variant-destructive:hover {
+  background: var(--destructive-hover, #dc2626);
+}
+.badge-variant-outline {
+  color: var(--foreground);
+} 

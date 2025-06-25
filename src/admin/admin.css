@@ -1,0 +1,307 @@
+body, .admin-root {
+  background: #10141a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+.admin-sidebar {
+  width: 220px;
+  background: #181c23;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.admin-sidebar-header {
+  padding: 2rem 1rem 1rem 1rem;
+  border-bottom: 1px solid #23272f;
+  background: #23272f;
+}
+.admin-sidebar-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ef4444;
+  text-align: center;
+}
+.admin-sidebar-nav {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.admin-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.admin-sidebar a.active, .admin-sidebar a:hover {
+  background: #ef4444;
+  color: #fff;
+}
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  background: #10141a;
+  min-height: 100vh;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #181c23;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.admin-table th, .admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #23272f;
+  text-align: left;
+}
+.admin-table th {
+  background: #23272f;
+  font-weight: 600;
+}
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+.admin-form {
+  background: #181c23;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+.admin-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.admin-form input, .admin-form textarea, .admin-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #23272f;
+  background: #23272f;
+  color: #fff;
+}
+.admin-form button {
+  background: #ef4444;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-form button:hover {
+  background: #dc2626;
+}
+
+/* View Toggle Buttons */
+.admin-view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: #23272f;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.admin-view-toggle button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.admin-view-toggle button.active {
+  background: #ef4444;
+  color: #fff;
+}
+
+.admin-view-toggle button:hover:not(.active) {
+  background: #374151;
+}
+
+/* Video Grid */
+.admin-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Video Cards */
+.admin-video-card {
+  background: #181c23;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.admin-video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3);
+}
+
+.admin-video-card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.admin-video-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.admin-video-card:hover .admin-video-card-image img {
+  transform: scale(1.05);
+}
+
+.admin-video-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.admin-video-card:hover .admin-video-card-overlay {
+  opacity: 1;
+}
+
+.admin-video-card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.admin-video-card-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.admin-video-card-btn.edit {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.admin-video-card-btn.edit:hover {
+  background: #2563eb;
+}
+
+.admin-video-card-btn.delete {
+  background: #ef4444;
+  color: #fff;
+}
+
+.admin-video-card-btn.delete:hover {
+  background: #dc2626;
+}
+
+.admin-video-card-content {
+  padding: 1rem;
+}
+
+.admin-video-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.admin-video-card-duration {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.admin-video-card-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-video-card-genre {
+  background: #374151;
+  color: #d1d5db;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    min-height: unset;
+  }
+  .admin-sidebar-header {
+    display: none;
+  }
+  .admin-sidebar-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0;
+  }
+  .admin-sidebar a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  .admin-main {
+    padding: 1rem;
+  }
+  .admin-video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-video-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-view-toggle {
+    margin-top: 1rem;
+  }
+  .admin-view-toggle button {
+    flex: 1;
+  }
+} 

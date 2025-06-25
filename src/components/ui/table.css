@@ -1,0 +1,54 @@
+/* table.css - Extracted styles from table.jsx */
+
+.table-outer {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+.table-base {
+  width: 100%;
+  caption-side: bottom;
+  font-size: 0.875rem;
+}
+.table-header tr {
+  border-bottom: 1px solid var(--border);
+}
+.table-body tr:last-child {
+  border-bottom: none;
+}
+.table-footer {
+  border-top: 1px solid var(--muted);
+  background: rgba(var(--muted), 0.5);
+  font-weight: 500;
+}
+.table-footer tr:last-child {
+  border-bottom: none;
+}
+.table-row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.table-row:hover {
+  background: rgba(var(--muted), 0.5);
+}
+.table-row[data-state="selected"] {
+  background: var(--muted);
+}
+.table-head {
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.table-cell {
+  padding: 1rem;
+  vertical-align: middle;
+}
+.table-caption {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+} 

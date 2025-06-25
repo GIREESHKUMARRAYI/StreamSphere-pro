@@ -1,0 +1,26 @@
+/* alert.css - Extracted styles from alert.jsx */
+
+.alert-base {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+.alert-variant-default {
+  background: var(--background);
+  color: var(--foreground);
+}
+.alert-variant-destructive {
+  border-color: rgba(var(--destructive), 0.5);
+  color: var(--destructive);
+}
+.alert-title {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.alert-desc {
+  font-size: 0.875rem;
+} 

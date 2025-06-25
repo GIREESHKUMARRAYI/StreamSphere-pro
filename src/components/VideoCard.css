@@ -1,0 +1,217 @@
+.videocard-root {
+  flex: 0 0 220px;
+  width: 220px;
+  height: 340px;
+  background: #18181b;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.videocard-root:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.25);
+}
+.videocard-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+.videocard-thumbnail {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.videocard-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+.videocard-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.videocard-root:hover .videocard-play-overlay {
+  opacity: 1;
+}
+.videocard-play-btn {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.videocard-play-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+.videocard-play-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+.videocard-rating {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fbbf24;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.videocard-duration {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.videocard-info-panel {
+  padding: 0.75rem 1rem 1rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #18181b;
+}
+.videocard-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.videocard-desc {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.videocard-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.videocard-genre-badge {
+  background: #374151;
+  color: #d1d5db;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.videocard-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.videocard-action-play {
+  flex: 1;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.videocard-action-play:hover {
+  background: #dc2626;
+}
+.videocard-action-play-icon {
+  width: 16px;
+  height: 16px;
+}
+.videocard-action-watchlist,
+.videocard-action-info {
+  background: transparent;
+  color: #9ca3af;
+  border: 1px solid #374151;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.videocard-action-watchlist:hover,
+.videocard-action-info:hover {
+  background: #374151;
+  color: white;
+}
+.videocard-action-icon {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 600px) {
+  .videocard-root {
+    width: 45vw;
+    min-width: 160px;
+    max-width: 48vw;
+    height: 200px;
+  }
+  .videocard-thumbnail {
+    height: 55%;
+  }
+  .videocard-info-panel {
+    padding: 0.5rem;
+  }
+  .videocard-title {
+    font-size: 0.875rem;
+  }
+  .videocard-desc {
+    font-size: 0.75rem;
+  }
+  .videocard-actions {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .videocard-action-play {
+    width: 100%;
+    justify-content: center;
+  }
+} 

@@ -1,0 +1,391 @@
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.subscription-manager {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  /* Glassy animated background */
+  background: rgba(30, 34, 45, 0.7);
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.subscription-manager > * {
+  position: relative;
+  z-index: 2;
+}
+
+.subscription-manager::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,0,80,0.12) 100%), url('https://www.transparenttextures.com/patterns/cubes.png');
+  backdrop-filter: blur(12px) saturate(1.3);
+  animation: glassy-bg-move 16s linear infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes glassy-bg-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 100px 100px, 200px 200px; }
+}
+
+.subscription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb22;
+  position: relative;
+  z-index: 1;
+}
+
+.subscription-header h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+
+.subscription-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-badge {
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  background: rgba(255,255,255,0.18);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.subscription-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subscription-info-card,
+.subscription-dates-card,
+.no-subscription-card {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff !important;
+  letter-spacing: 0.5px;
+}
+
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.plan-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ff1744 !important;
+}
+
+.plan-features {
+  margin-top: 1rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.billing-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.billing-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.billing-item:last-child {
+  border-bottom: none;
+}
+
+.billing-item svg {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.billing-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.billing-text .label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.billing-text .value {
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.subscription-alert {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.subscription-alert.cancelled {
+  border-color: #fca5a5;
+  background-color: #fef2f2;
+}
+
+.subscription-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cancel-button,
+.upgrade-button {
+  background: linear-gradient(90deg, #ff1744 0%, #ff616f 100%) !important;
+  color: #fff !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(255,23,68,0.12);
+}
+
+.cancel-button:hover,
+.upgrade-button:hover {
+  background: linear-gradient(90deg, #d50000 0%, #ff1744 100%) !important;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255,23,68,0.18);
+}
+
+.reactivate-button {
+  background: linear-gradient(90deg, #00e676 0%, #00bfa5 100%) !important;
+  color: #fff !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0,230,118,0.12);
+}
+
+.reactivate-button:hover {
+  background: linear-gradient(90deg, #00bfa5 0%, #00e676 100%) !important;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,230,118,0.18);
+}
+
+.change-plan-button {
+  background: transparent !important;
+  color: #ff1744 !important;
+  border: 1.5px solid #ff1744 !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.change-plan-button:hover {
+  background: rgba(255,23,68,0.08) !important;
+  border-color: #ff616f !important;
+}
+
+.logout-button {
+  background: transparent !important;
+  color: #ff1744 !important;
+  border: 1.5px solid #ff1744 !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: rgba(255,23,68,0.08) !important;
+  border-color: #ff616f !important;
+}
+
+.no-subscription-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-subscription-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.no-subscription-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.no-subscription-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.no-subscription-content p {
+  color: #6b7280;
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0;
+}
+
+.upgrade-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.upgrade-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subscription-manager {
+    padding: 1rem;
+  }
+  
+  .subscription-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .subscription-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .subscription-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subscription-actions button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription-manager {
+    padding: 0.5rem;
+  }
+  
+  .subscription-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .subscription-info-card,
+  .subscription-dates-card {
+    padding: 1rem;
+  }
+  
+  .plan-name {
+    font-size: 1.25rem;
+  }
+  
+  .plan-price {
+    font-size: 1rem;
+  }
+}
+
+/* Make sure all text inside cards is white for contrast */
+.subscription-info-card, .subscription-dates-card, .no-subscription-card {
+  color: #fff;
+} 
